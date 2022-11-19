@@ -48,6 +48,8 @@ ul, ol {
 
 table {
     margin: 1em;
+    margin-left: auto;
+    margin-right: auto;
 
     border-collapse: collapse;
     box-shadow: rgba(0, 0, 0, 0.2) 0.5em 0.5em 0.5em;
@@ -74,17 +76,8 @@ table > tbody > tr:nth-child(even) > td {
 
 /* Index */
 
-table#elo-ranking {
-    margin-left: auto;
-    margin-right: auto;
-}
-
 td.elo {
     font-size: 140%;
-}
-
-table#tournaments {
-    width: 100%;
 }
 
 table#tournaments > tbody > tr > td {
