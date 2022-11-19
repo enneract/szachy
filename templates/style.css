@@ -69,6 +69,10 @@ table#elo-ranking {
     margin-right: auto;
 }
 
+td.elo {
+    font-size: 140%;
+}
+
 table#tournaments {
     width: 100%;
 }
