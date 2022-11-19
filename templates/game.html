@@ -1,0 +1,36 @@
+<a href="{{ webroot }}/">&lt;&lt; Powrót</a>
+
+<h1>
+    Gra #{{ game.gid }}
+    -
+    <span class="{{'game-winner' if game.score == '1-0'}}">{{ game.white }}</span>
+    vs
+    <span class="{{'game-winner' if game.score == '0-1'}}">{{ game.black }}</span>
+</h1>
+
+<table>
+    <tbody>
+        <tr>
+            <td>Biały</td>
+            <td>{{ game.white }}</td>
+        </tr>
+        <tr>
+            <td>Czarny</td>
+            <td>{{ game.black }}</td>
+        </tr>
+        <tr>
+            <td>Wynik</td>
+            <td>{{ game.score }} ({{ game.termination }})</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>chess.com</h2>
+
+{% if game.chess_com_embed is not none %}
+<iframe id="{{ game.chess_com_embed }}" allowtransparency="true" frameborder="0" style="width:100%;border:none;" src="//www.chess.com/emboard?id={{ game.chess_com_embed }}"></iframe><script>window.addEventListener("message",e=>{e['data']&&"{{ game.chess_com_embed }}"===e['data']['id']&&document.getElementById(`${e['data']['id']}`)&&(document.getElementById(`${e['data']['id']}`).style.height=`${e['data']['frameHeight']+30}px`)});</script>
+{% endif %}
+
+<h2>PGN</h2>
+
+<p>{{ game.pgn }}</p>

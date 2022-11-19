@@ -1,0 +1,86 @@
+@font-face {
+    font-family: Roboto; src: url("{{ webroot }}/static/Roboto-Medium.ttf");
+}
+
+*, html, body {
+    margin: 0;
+    padding: 0;
+
+    font-family: Roboto, sans-serif;
+}
+
+body {
+    max-width: 60em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Headers */
+
+h1, h2, h3 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    border-bottom: 0.1em solid rgb(220, 220, 220);
+}
+
+/* Paragraphs, lists */
+
+p {
+    margin-bottom: 1em;
+}
+
+ul, ol {
+    margin-left: 2em;
+}
+
+/* Tables */
+
+table {
+    margin: 1em;
+
+    border-collapse: collapse;
+    box-shadow: rgb(220, 220, 220) 0.5em 0.5em 0.5em;
+}
+
+td, th {
+    padding: 0.4em;
+
+    border: 0.1em solid rgb(235, 235, 235);
+}
+
+table > thead > tr > th {
+    background-color: rgb(220, 220, 220);
+}
+
+table > tbody > tr > td {
+    background-color: white;
+}
+
+table > tbody > tr:nth-child(even) > td {
+    background-color: rgb(235, 235, 235);
+}
+
+
+/* Index */
+
+table#elo-ranking {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table#tournaments {
+    width: 100%;
+}
+
+table#tournaments > tbody > tr > td {
+    vertical-align: top;
+}
+
+/* Misc. */
+
+span.game-winner {
+    font-size: 110%;
+    font-weight: bold;
+    text-decoration: underline;
+}

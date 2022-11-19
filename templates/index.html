@@ -1,0 +1,74 @@
+<p>Witaj na stronie Białokamieńsko-Piaskogórskiej Ligi Szachowej.</p>
+
+<h2>Ranking</h2>
+
+<table id="elo-ranking">
+    <thead>
+        <tr>
+            <th>Pozycja</th>
+            <th>Gracz</th>
+            <th>Elo</th>
+            <th>W / R / P</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for rank, player, rating in elo_ranking %}
+        <tr>
+            <td>{{ rank }}</td>
+            <td>{{ player }}</td>
+            <td>{{ rating }}</td>
+            <td>{{ total_scores[player].wins }} / {{ total_scores[player].draws }} / {{ total_scores[player].losses }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h2>Turnieje</h2>
+
+<table id="tournaments">
+    <thead>
+        <tr>
+            <th>Data i miejsce</th>
+            <th>Gry</th>
+            <th>Pozycja</th>
+            <th>Gracz</th>
+            <th>Wynik</th>
+            <th>Elo</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for tournament in tournaments %}
+        {% for rank, player, initial_rating, scores in tournament.ranking %}
+        <tr>
+            {% if loop.index == 1 %}
+            <td rowspan="{{ tournament.ranking|length }}">
+                {{ tournament.date }}
+                </br>{{ tournament.location }}
+                {% if not tournament.ranked %}
+                </br><i>(nierankingowy)</i>
+                {% endif %}
+            </td>
+            <td rowspan="{{ tournament.ranking|length }}">
+                <ol>
+                    {% for game in tournament.games %}
+                    <li>
+                        <a href="{{ webroot }}/gra/{{ game.gid }}">
+                            <span class="{{'game-winner' if game.score == '1-0'}}">{{ game.white }}</span>
+                            vs
+                            <span class="{{'game-winner' if game.score == '0-1'}}">{{ game.black }}</span>
+                        </a>
+                        ({{ game.score }})
+                    </li>
+                    {% endfor %}
+                </ol>
+            </td>
+            {% endif %}
+            <td>{{ rank }}</td>
+            <td>{{ player }} ({{initial_rating}})</td>
+            <td>{{ scores.actual }}/{{ scores.games_played }}</td>
+            <td>{{ scores.adjustment }}</td>
+        </tr>
+        {% endfor %}
+        {% endfor %}
+    </tbody>
+</table>
