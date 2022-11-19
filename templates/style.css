@@ -9,10 +9,20 @@
     font-family: Roboto, sans-serif;
 }
 
+html {
+    min-height: 100%;
+
+    background-image: url("{{ webroot }}/static/background.jpg");
+    background-size: cover;
+}
+
 body {
     max-width: 60em;
     margin-left: auto;
     margin-right: auto;
+    padding: 2em;
+
+    background: white;
 }
 
 /* Headers */
@@ -40,7 +50,7 @@ table {
     margin: 1em;
 
     border-collapse: collapse;
-    box-shadow: rgb(220, 220, 220) 0.5em 0.5em 0.5em;
+    box-shadow: rgba(0, 0, 0, 0.2) 0.5em 0.5em 0.5em;
 }
 
 td, th {
