@@ -16,7 +16,7 @@ def _format_score(score: int) -> str:
     return str(score // 2) + ('.5' if score % 2 == 1 else '')
 
 
-class GameSummary:
+class GameView:
     def __init__(self, game: Game) -> None:
         self.gid = game.gid
         self.white = _abbreviate_name(game.white)
@@ -37,11 +37,11 @@ class ScoreView:
             self.adjustment = f'\N{EN DASH}{-score.adjustment}'
 
 
-class TournamentSummary:
+class TournamentView:
     def __init__(self, tournament: Tournament) -> None:
         self.date = tournament.date
         self.location = tournament.location
-        self.games = [GameSummary(game) for game in tournament.games]
+        self.games = [GameView(game) for game in tournament.games]
         self.ranked = tournament.ranked
         self.ranking = [
             (
@@ -55,7 +55,7 @@ class TournamentSummary:
         ]
 
 
-class GameDetails(GameSummary):
+class GameDetailedView(GameView):
     def __init__(self, game: Game) -> None:
         super().__init__(game)
 
@@ -98,7 +98,7 @@ def main() -> None:
 
     @routes.get(webroot)
     async def index(request: web.Request) -> web.Response:
-        tournament_summaries = [*map(TournamentSummary, tournaments)]
+        tournament_summaries = [*map(TournamentView, tournaments)]
         content = tpl_index.render(
             webroot=webroot,
             elo_ranking=elo_ranking,
@@ -117,7 +117,7 @@ def main() -> None:
         except KeyError:
             raise web.HTTPNotFound
 
-        content = tpl_game.render(webroot=webroot, game=GameDetails(game))
+        content = tpl_game.render(webroot=webroot, game=GameDetailedView(game))
         text = tpl_header_footer.render(webroot=webroot, content=content)
         return web.Response(text=text, content_type='text/html')
 

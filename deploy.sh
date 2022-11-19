@@ -1,7 +1,6 @@
 #!/bin/bash
 set -xEeuo pipefail
 
-PACKAGE="szachy.tar.gz"
 HOST="redman.xyz"
 DESTDIR="/home/enneract/szachy"
 
