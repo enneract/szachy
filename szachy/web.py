@@ -43,6 +43,7 @@ class TournamentView:
         self.location = tournament.location
         self.games = [GameView(game) for game in tournament.games]
         self.ranked = tournament.ranked
+
         self.ranking = [
             (
                 rank,
@@ -51,7 +52,7 @@ class TournamentView:
                 ScoreView(score, tournament.ranked)
             )
             for rank, name, score
-            in compute_ranking(tournament.scores, lambda scores: scores.actual)
+            in compute_ranking(tournament.scores, lambda scores: float(scores))
         ]
 
 

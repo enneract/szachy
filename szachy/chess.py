@@ -3,7 +3,7 @@ Elo ratings and tournament rankings.
 """
 from collections import defaultdict
 from dataclasses import dataclass
-from typing import Callable, Dict, Iterator, List, Optional, Tuple, TypeVar, Union
+from typing import Any, Callable, Dict, Iterator, List, Optional, Tuple, TypeVar, Union
 import datetime
 
 from szachy.database import TOURNAMENTS, Termination
@@ -37,6 +37,13 @@ class Score:
     actual: int = 0
     expected: float = 0.0  # Expected score based on Elo ratings
     adjustment: int = 0
+
+    def __float__(self) -> float:
+        return self.actual / 2 / self.games_played
+
+    def __eq__(self, other: Any) -> bool:
+        assert isinstance(other, Score)
+        return float(self) == float(other)
 
 
 class TotalScore:
