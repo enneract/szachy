@@ -97,6 +97,7 @@ def main() -> None:
     }
 
     @routes.get(webroot)
+    @routes.get(f'{webroot}/')
     async def index(request: web.Request) -> web.Response:
         tournament_summaries = [*map(TournamentView, tournaments)]
         content = tpl_index.render(
