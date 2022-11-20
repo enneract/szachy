@@ -124,5 +124,156 @@ TOURNAMENTS = [
                 chess_com_embed=9661467,
             ),
         ]
-    )
+    ),
+    TournamentData(
+        date=date(2022, 11, 20),
+        location='Rezydencja J. Szachego',
+        games=[
+            GameData(
+                gid=7,
+                white='Husarski Generał',
+                black='Jerzy Szachy',
+                pgn='''1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Bxc6 bxc6 5. Nxe5 Qe7 6. f4 g5 7. g3 f6 8. Nd3
+Qxe4+ 9. Kf2 Bh6 10. Nc3 Qd4+ 11. Kf3 c5 12. Re1+ Ne7 13. Re4 g4+ 14. Kxg4 f5+
+15. Kh5 fxe4 16. Kxh6 exd3 17. cxd3 Qf6+ 18. Kh5 Rg8 19. Qg4 Rxg4 20. Kxg4 Bb7
+21. Ne4 h5+ 22. Kxh5 Qf5+ 23. Kh4 Ng6# 0-1''',
+                score=0,
+                termination=Termination.CHECKMATE,
+                chess_com_embed=9684881,
+            ),
+            GameData(
+                gid=8,
+                white='Jerzy Szachy',
+                black='Husarski Generał',
+                pgn='''1. e4 b5 2. Qf3 a6 3. c4 bxc4 4. Bxc4 Nc6 5. Qxf7# 1-0''',
+                score=2,
+                termination=Termination.CHECKMATE,
+                chess_com_embed=9684885,
+            ),
+            GameData(
+                gid=9,
+                white='Hikaru Hetman',
+                black='Stoned Qń',
+                pgn='''1. Nc3 d6 2. a3 c5 3. e4 Na6 4. b4 cxb4 5. axb4 Nxb4 6. g3 Nf6 7. Nh3 h6 8. Bg2
+g5 9. Ba3 Nc6 10. f4 gxf4 11. gxf4 Nd4 12. e5 dxe5 13. fxe5 Ng4 14. O-O e6 15.
+Bxb7 Bxb7 16. Qxg4 f5 17. Qg6+ Kd7 18. Rab1 Nxc2 19. Rxb7+ Kc8 20. Qf7 Nxa3 21.
+Nf4 Nc4 22. Nxe6 Nxe5 23. Nxd8 Nxf7 24. Nxf7 Kxb7 25. Nxh8 Bg7 26. Nf7 h5 27.
+Rxf5 Rf8 28. Nd6+ Kc6 29. Nce4 Bd4+ 30. Kg2 Re8 31. Rxh5 Bc5 32. Rxc5+ Kb6 33.
+Nxe8 a6 34. h4 a5 35. Nc3 Kxc5 36. h5 Kb4 37. h6 1-0''',
+                score=2,
+                termination=Termination.RESIGNATION,
+                chess_com_embed=9685083,
+            ),
+            GameData(
+                gid=10,
+                white='Stoned Qń',
+                black='Hikaru Hetman',
+                pgn='''1. Nf3 d5 2. Nd4 e5 3. Nb5 Bd7 4. N5c3 Nc6 5. Nxd5 Be6 6. Ne3 f5 7. d3 f4 8. Nc4
+Bxc4 9. dxc4 Qxd1+ 10. Kxd1 Rd8+ 11. Ke1 a5 12. e3 Nb4 13. exf4 Nxc2+ 14. Ke2
+Nxa1 15. fxe5 Rd4 16. Be3 Rxc4 17. b3 Rc2+ 18. Kd1 Bb4 19. Bd3 Rxa2 20. Bb5+ c6
+21. Ba6 b6 22. Bxb6 Nh6 23. h3 Rxf2 24. Bxf2 Nxb3 25. Bc4 a4 26. Be3 Nf5 27. Bg5
+Rf8 28. Bd3 h6 29. g4 Ng3 30. Rg1 a3 31. Bb5 cxb5 32. Be3 Bc5 33. Rxg3 a2 34.
+Bxc5 Nxc5 35. Kc1 Nb3+ 36. Kb2 Rf2+ 37. Kxb3 axb1=Q+ 38. Kc3 Qc2+ 39. Kd4 Qc4+
+40. Ke3 Re2+ 41. Kf3 Rxe5 42. h4 Qe4+ 43. Kf2 b4 44. g5 Qc2+ 45. Kf3 b3 46. gxh6
+gxh6 47. Rg8+ Kd7 48. Rh8 b2 49. Rxh6 b1=Q 50. Rf6 Qc3+ 51. Kf4 Re4+ 52. Kf5
+Qe5+ 53. Kg6 Rg4+ 54. Kf7 Qe7# 0-1''',
+                score=0,
+                termination=Termination.CHECKMATE,
+                chess_com_embed=9685091,
+            ),
+            GameData(
+                gid=11,
+                white='Husarski Generał',
+                black='Magnus Carlsen',
+                pgn='''1. c3 Nc6 2. d4 d5 3. f3 Bf5 4. e4 Be6 5. Nd2 Qd7 6. Nb3 O-O-O 7. Nc5 Qd6 8. b4
+b6 9. Na6 Kb7 10. Nc5+ bxc5 11. bxc5 Qd7 12. Rb1+ Kc8 13. Bb5 Nb8 14. Bxd7+ Kxd7
+15. Qa4+ Kc8 16. Qxa7 Nc6 17. Qa8+ Kd7 18. Qa6 Rb8 19. Rxb8 Nxb8 20. Qa4+ Kc8
+21. c4 dxc4 22. d5 Bd7 23. c6 Be8 24. Qxc4 Nf6 25. Bb2 Nh5 26. a4 g5 27. g4 Ng7
+28. Ne2 h6 29. O-O f6 30. Bd4 Na6 31. Rb1 Bg6 32. Qxa6+ Kd8 33. Rb8# 1-0''',
+                score=2,
+                termination=Termination.CHECKMATE,
+                chess_com_embed=9685095,
+            ),
+            GameData(
+                gid=12,
+                white='Magnus Carlsen',
+                black='Husarski Generał',
+                pgn='''1. e4 b6 2. f4 c5 3. Nf3 d6 4. d3 f6 5. Be3 e5 6. Nc3 exf4 7. Bxf4 g5 8. Be3 Bg4
+9. h3 Bh5 10. Nd2 Bxd1 11. Kxd1 Nh6 12. Nc4 b5 13. Nxb5 Rg8 14. Nbxd6+ Bxd6 15.
+b3 Bf4 16. Bxf4 gxf4 17. Be2 Rxg2 18. Kd2 Qd7 19. Raf1 Qc7 20. Rfg1 f3 21. Rxg2
+fxg2 22. Rh2 Qxh2 23. Ne3 Qxh3 24. Kc3 Qxe3 25. Kb2 Qxe2 0-1''',
+                score=0,
+                termination=Termination.RESIGNATION,
+                chess_com_embed=9685107,
+            ),
+            GameData(
+                gid=13,
+                white='Jerzy Szachy',
+                black='Pion Forward',
+                pgn='''1. e4 e5 2. d4 d5 3. Bb5+ Bd7 4. Nc3 a6 5. Bxd7+ Nxd7 6. Nxd5 exd4 7. Qxd4 Ndf6
+8. Bg5 Be7 9. O-O-O c5 10. Qa4+ Qd7 11. Nc7+ Kd8 12. Rxd7+ Nxd7 13. Nxa8 Ne5 14.
+Qa5+ Kc8 15. Qc7# 1-0''',
+                score=2,
+                termination=Termination.CHECKMATE,
+                chess_com_embed=9685275,
+            ),
+            GameData(
+                gid=14,
+                white='Pion Forward',
+                black='Jerzy Szachy',
+                pgn='''1. e4 e5 2. d4 f6 3. c3 c6 4. Nf3 Na6 5. b4 Bd6 6. Ba3 Ne7 7. Qd2 O-O 8. g4 Qb6
+9. Bc4+ Kh8 10. g5 fxg5 11. Nxg5 exd4 12. cxd4 Bf4 13. Qd3 Bxg5 14. b5 Qa5+ 15.
+Kd1 cxb5 16. Bxe7 Bxe7 17. Bd5 Nb4 18. Qd2 d6 19. a3 Bg4+ 20. Ke1 Bf3 21. Rg1
+Nc2+ 22. Kf1 Qxd2 23. Nxd2 Nxa1 24. Nxf3 Rxf3 25. Bxb7 Raf8 26. Kg2 Rxf2+ 27.
+Kg3 R8f3+ 28. Kg4 d5 29. Rc1 Bxa3 30. Rc8+ Bf8 31. Bxd5 a5 32. e5 Rd3 33. Bf7
+Rxf7 34. e6 Rxd4+ 35. Kg5 h6+ 36. Kg6 Rf6+ 37. Kh5 Rxe6 38. Rxf8+ Kh7 39. Rf5
+g6# 0-1''',
+                score=0,
+                termination=Termination.CHECKMATE,
+                chess_com_embed=9685279,
+            ),
+            GameData(
+                gid=15,
+                white='Husarski Generał',
+                black='Stoned Qń',
+                pgn='''1. Nc3 c6 2. d4 d5 3. e3 Na6 4. Bxa6 bxa6 5. b4 Qb6 6. a3 a5 7. bxa5 Qxa5 8. Bb2
+Nf6 9. f3 e6 10. e4 dxe4 11. fxe4 Be7 12. e5 Nd5 13. Qd2 h6 14. Nxd5 Qxd2+
+15. Kxd2 exd5 16. Nf3 g5 17. g3 f5 18. h3 Rb8 19. Rhb1 g4 20. Nh4 gxh3 21. Rh1
+f4 22. Rxh3 Bxh3 23. c4 Rxb2+ 24. Kc1 Rh2 25. Kb1 Rh1+ 26. Kb2 Rxa1 27. Kxa1
+dxc4 28. Kb2 fxg3 29. Ng6 Rg8 30. Nf4 Bf1 31. d5 g2 32. dxc6 g1=Q 33. c7 Kf7
+34. e6+ Kf6 35. Nd5+ Kxe6 36. Nf4+ Ke5 37. Nh3 Qh2+ 38. Kc3 Qxh3+ 39. Kc2 Kd4
+40. a4 Rc8 41. a5 Rxc7 42. a6 Rc6 43. Kd2 c3+ 44. Ke1 Rxa6 45. Kf2
+Ra2+ 46. Kg1 Bc5 ½-½''',
+                score=1,
+                termination=Termination.STALEMATE,
+                chess_com_embed=9685289,
+            ),
+            GameData(
+                gid=16,
+                white='Hikaru Hetman',
+                black='Fryderyk Szopen',
+                pgn='''1. Nc3 e5 2. e4 b6 3. Nf3 Bb7 4. Nxe5 f6 5. Nc4 Ne7 6. e5 d6 7. f4 Bd5 8. b3 b5
+9. Ne3 b4 10. Ncxd5 Nxd5 11. Nxd5 fxe5 12. Qh5+ g6 13. Qh3 Bg7 14. g3 exf4 15.
+Nxf4 Bxa1 16. Qe6+ Qe7 17. Bb5+ Kf8 18. c3 bxc3 19. dxc3 Bxc3+ 20. Ke2 a6 21.
+Bd2 axb5 22. Bxc3 Rg8 23. Qe3 Rxa2+ 24. Kd3 g5 25. Ne6+ Kf7 26. Rf1+ Kg6 27.
+Qe4+ Kh6 28. Rf6+ Kh5 29. g4+ Kh4 30. Rh6# 1-0''',
+                score=2,
+                termination=Termination.CHECKMATE,
+                chess_com_embed=9685433,
+            ),
+            GameData(
+                gid=17,
+                white='Fryderyk Szopen',
+                black='Hikaru Hetman',
+                pgn='''1. e4 Nf6 2. d3 e5 3. b4 Bxb4+ 4. Bd2 a5 5. Qf3 Bxd2+ 6. Kxd2 d5 7. Nc3 c6 8. g4
+O-O 9. g5 Ng4 10. h3 dxe4 11. Qg3 Qxg5+ 12. f4 exf4 13. Qxg4 e3+ 14. Ke2 Bxg4+
+15. Ke1 f3 16. hxg4 f2+ 17. Ke2 Qxg4+ 18. Kxe3 fxg1=Q+ 19. Rxg1 Qxg1+ 20. Ke2
+Re8+ 21. Ne4 Qh2+ 22. Kf3 f5 23. Ng3 Rf8 24. Re1 f4 25. Ne4 Qxc2 26. d4 Qxa2 27.
+Nd6 Qa3+ 28. Re3 fxe3+ 0-1''',
+                score=0,
+                termination=Termination.RESIGNATION,
+                chess_com_embed=9685431,
+            ),
+        ],
+    ),
 ]
