@@ -41,7 +41,7 @@ TOURNAMENTS = [
         games=[
             GameData(
                 gid=5,
-                white='Qń',
+                white='Stoned Qń',
                 black='Pion Forward',
                 pgn='''1. Nh3 f5 2. e3 Nf6 3. Bd3 e6 4. b3 Bb4 5. c3 Bd6 6. Bb2 b6 7. c4 Nc6 8. Ng5 Nb4 9. a3 Nxd3+ 10. Ke2 Nxb2 11. Qc2 Be5 12. f4 Bd6 13. Qxb2 Bb7 14. h4 h6 15. Nf3 O-O 16. Nc3 Ng4 17. Rh3 e5 18. fxe5 Bxe5 19. Nxe5 Nxe5 20. d4 Bxg2 21. Rg3 Qxh4 22. Rxg2 Ng4 23. Nb5 d5 24. Nxc7 Rac8 25. Na6 Qh3 26. Rgg1 Qh2+ 27. Rg2 Qxg2+ 28. Kd3 Qxb2 29. Rh1 Qxa3 30. cxd5 Qxb3+ 31. Kd2 Nxe3 32. Rh3 Rc2+ 33. Ke1 Qb1#''',
                 score=0,
