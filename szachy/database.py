@@ -41,7 +41,7 @@ TOURNAMENTS = [
         games=[
             GameData(
                 gid=5,
-                white='Piżama',
+                white='Qń',
                 black='Pion Forward',
                 pgn='''1. Nh3 f5 2. e3 Nf6 3. Bd3 e6 4. b3 Bb4 5. c3 Bd6 6. Bb2 b6 7. c4 Nc6 8. Ng5 Nb4 9. a3 Nxd3+ 10. Ke2 Nxb2 11. Qc2 Be5 12. f4 Bd6 13. Qxb2 Bb7 14. h4 h6 15. Nf3 O-O 16. Nc3 Ng4 17. Rh3 e5 18. fxe5 Bxe5 19. Nxe5 Nxe5 20. d4 Bxg2 21. Rg3 Qxh4 22. Rxg2 Ng4 23. Nb5 d5 24. Nxc7 Rac8 25. Na6 Qh3 26. Rgg1 Qh2+ 27. Rg2 Qxg2+ 28. Kd3 Qxb2 29. Rh1 Qxa3 30. cxd5 Qxb3+ 31. Kd2 Nxe3 32. Rh3 Rc2+ 33. Ke1 Qb1#''',
                 score=0,
@@ -51,7 +51,7 @@ TOURNAMENTS = [
             GameData(
                 gid=6,
                 white='Fryderyk Szopen',
-                black='Kubik',
+                black='Husarski Generał',
                 pgn='''1. Na3 Nc6 2. g4 b6 3. Nf3 Bb7 4. g5 d6 5. c3 Ne5 6. Nd4 Bxh1 7. f4 Ng4 8. h3 Nh2 9. Nc6 Qd7 10. Nd4 Qd8 11. e3 c5 12. Bb5+ Bc6 13. Bxc6+ Qd7 14. b4 Rc8 15. e4 Rxc6 16. Nxc6 Qxc6 17. d3 g6 18. b5 Qc8 19. f5 gxf5 20. exf5 Qxf5 21. Qd2 Nf3+ 22. Ke2 Nxd2 23. Kxd2 Qxh3 24. d4 f6 25. gxf6 Bh6+ 26. Kc2 Nxf6 27. Nc4 Rg8 28. dxc5 Rg2+ 29. Nd2 dxc5 30. c4 Bxd2 31. Bxd2 Ng4 32. Re1 Ne3+ 33. Kd3 Nd5+ 34. Be3 Rxa2 35. Ke4 e6 36. Ke5 Ke7 37. Bg5+ Kd7 38. cxd5 Qg3+ 39. Kf6 Qxe1 40. dxe6+ Kd6 41. Bf4+ Kd5 42. e7 Qxe7+ 43. Kxe7 c4 44. Kd7 c3 45. Ke7 c2 46. Bc1 Ra1 47. Bb2 Rb1 48. Ba3 Ra1 49. Bb2 Ra5 50. Kf7 Rxb5 51. Bc1 Kd6 52. Kg7 Rh5 53. Kf6 b5 54. Bf4+ Kd5 55. Ke7 Ke4 56. Bc1 b4 57. Kd7 b3 58. Kc7 Rh1 59. Bf4 b2 60. Kb7 b1=Q+ 61. Kxa7 Kxf4 62. Ka8 Qa1+ 63. Kb8 c1=Q 64. Kb7 Rd1 65. Kb6 Qab1+ 66. Ka6 Qa3# 0-1''',
                 score=0,
                 termination=Termination.CHECKMATE,
