@@ -77,6 +77,23 @@ table > tbody > tr:nth-child(even) > td {
 
 /* Index */
 
+div#riczart {
+    text-align: center;
+}
+
+div#riczart > img {
+    width: 25em;
+    margin: 1em;
+
+    box-shadow: rgba(0, 0, 0, 0.2) 0.5em 0.5em 0.5em;
+}
+
+div#riczart > span {
+    display: block;
+
+    font-size: 90%;
+}
+
 td.elo {
     font-size: 140%;
 }
