@@ -27,6 +27,7 @@ class GameData:
 
 @dataclass(frozen=True)
 class TournamentData:
+    tid: int
     date: date
     location: str
     games: List[GameData]
@@ -36,6 +37,7 @@ class TournamentData:
 # TODO: this will be replaced with a proper SQL database once it grows big enough.
 TOURNAMENTS = [
     TournamentData(
+        tid=1,
         date=date(2022, 11, 5),
         location='Rezydencja J. Szachego',
         games=[
@@ -60,6 +62,7 @@ TOURNAMENTS = [
         ],
     ),
     TournamentData(
+        tid=2,
         date=date(2022, 11, 12),
         location='Rezydencja J. Szachego',
         games=[
@@ -126,6 +129,7 @@ TOURNAMENTS = [
         ]
     ),
     TournamentData(
+        tid=3,
         date=date(2022, 11, 20),
         location='Rezydencja J. Szachego',
         games=[

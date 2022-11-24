@@ -1,10 +1,15 @@
 import argparse
+from collections import defaultdict
+from dataclasses import dataclass
+from typing import Dict, List, Tuple
 
 from aiohttp import web
 from jinja2 import Environment, FileSystemLoader
 
 from szachy.chess import Game, Score, Tournament, compute_ratings, compute_ranking
 from szachy.database import Termination
+
+PlayerPair = Tuple[str, str]
 
 
 def _abbreviate_name(name: str) -> str:
@@ -13,7 +18,11 @@ def _abbreviate_name(name: str) -> str:
 
 
 def _format_score(score: int) -> str:
-    return str(score // 2) + ('.5' if score % 2 == 1 else '')
+    return (str(score // 2) if score != 1 else '') + ('½' if score % 2 == 1 else '')
+
+
+def _make_player_pair(game: Game) -> PlayerPair:
+    return tuple(sorted((game.white, game.black)))
 
 
 class GameView:
@@ -70,6 +79,87 @@ class GameDetailedView(GameView):
         self.pgn = game.pgn
 
 
+# class PairGameView:
+#     def __init__(self, player_a: str, player_b: str, game: Game) -> None:
+#         # FIXME: simplify
+#         if player_a == game.white:
+#             self.color_a = 'white'
+#             self.score_a = {0: '0', 1: '½', 2: '1'}[game.score]
+#             self.color_b = 'black'
+#             self.score_b = {0: '1', 1: '½', 2: '0'}[game.score]
+#         else:
+#             self.color_a = 'black'
+#             self.score_a = {0: '1', 1: '½', 2: '0'}[game.score]
+#             self.color_b = 'white'
+#             self.score_b = {0: '0', 1: '½', 2: '1'}[game.score]
+#
+
+
+@dataclass(frozen=True)
+class PairGameView:
+    color_a: str
+    score_a: str
+    color_b: str
+    score_b: str
+
+
+@dataclass(frozen=True)
+class PairView:
+    player_a: str
+    player_b: str
+    games: List[PairGameView]
+    total_a: str
+    total_b: str
+
+
+class TournamentDetailedView(TournamentView):
+    def __init__(self, tournament: Tournament) -> None:
+        super().__init__(tournament)
+
+        raw_pairs: Dict[PlayerPair, List[Game]] = defaultdict(list)
+        for game in tournament.games:
+            raw_pairs[_make_player_pair(game)].append(game)
+
+        self.pairs: List[PairView] = []
+        for pair, raw_games in raw_pairs.items():
+            player_a, player_b = pair
+
+            games: List[PairGameView] = []
+            total_a = 0
+            total_b = 0
+
+            for game in raw_games:
+                # FIXME: simplify
+                if player_a == game.white:
+                    color_a = 'white'
+                    score_a = game.score
+                    color_b = 'black'
+                    score_b = 2 - game.score
+                else:
+                    color_a = 'black'
+                    score_a = 2 - game.score
+                    color_b = 'white'
+                    score_b = game.score
+
+                games.append(PairGameView(
+                    color_a,
+                    _format_score(score_a),
+                    color_b,
+                    _format_score(score_b),
+                ))
+
+                total_a += score_a
+                total_b += score_b
+
+            self.pairs.append(PairView(
+                player_a,
+                player_b,
+                games,
+                _format_score(total_a),
+                _format_score(total_b),
+            ))
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument('--host', type=str, default='127.0.0.1')
@@ -86,10 +176,16 @@ def main() -> None:
     tpl_header_footer = environment.get_template('header_footer.html')
     tpl_index = environment.get_template('index.html')
     tpl_game = environment.get_template('game.html')
+    tpl_tournament = environment.get_template('tournament.html')
     tpl_style = environment.get_template('style.css')
 
     ratings, tournaments, total_scores = compute_ratings()
     elo_ranking = [*compute_ranking(ratings, lambda rating: rating)]
+
+    tournaments_by_tid = {
+        tournament.tid: tournament
+        for tournament in tournaments
+    }
 
     games_by_gid = {
         game.gid: game
@@ -123,8 +219,22 @@ def main() -> None:
         text = tpl_header_footer.render(webroot=webroot, content=content)
         return web.Response(text=text, content_type='text/html')
 
+    @routes.get(f'{webroot}/turniej/{{tid}}')
+    async def tournament_details(request: web.Request) -> web.Response:
+        try:
+            tournament = tournaments_by_tid[int(request.match_info['tid'])]
+        except ValueError:
+            raise web.HTTPBadRequest
+        except KeyError:
+            raise web.HTTPNotFound
+
+        content = tpl_tournament.render(webroot=webroot, tournament=TournamentDetailedView(tournament))
+        text = tpl_header_footer.render(webroot=webroot, content=content)
+        return web.Response(text=text, content_type='text/html')
+
     @routes.get(f'{webroot}/style.css')
     async def style(request: web.Request) -> web.Response:
+        tpl_style = environment.get_template('style.css') # DEBUG
         text = tpl_style.render(webroot=webroot)
         return web.Response(text=text, content_type='text/css')
 

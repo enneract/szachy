@@ -57,6 +57,7 @@ class TotalScore:
 
 @dataclass(frozen=True)
 class Tournament:
+    tid: int
     date: datetime.date
     location: str
     games: List[Game]
@@ -128,6 +129,7 @@ def compute_ratings() -> Tuple[Dict[str, int], List[Tournament], Dict[str, Total
                 ratings[player] = elo_adjust_rating(ratings[player], score)
 
         tournaments.append(Tournament(
+            tournament.tid,
             tournament.date,
             tournament.location,
             games,

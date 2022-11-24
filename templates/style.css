@@ -105,6 +105,44 @@ table#tournaments > tbody > tr > td {
     vertical-align: top;
 }
 
+/* Tournament details */
+
+div.tournament-pair {
+    margin: 1em;
+    overflow: scroll;
+}
+
+div.tournament-pair > div {
+    display: inline-block;
+    min-width: 1.5em;
+}
+
+div.tournament-pair > div > div {
+    padding: 0.5em;
+    height: 1em;
+
+    border: 0.1em solid rgb(220, 220, 220);
+}
+
+div.tournament-pair > div > div:nth-child(even) {
+    background-color: rgb(235, 235, 235);
+}
+
+div.tournament-pair > div.scores > div {
+    width: 1em;
+    text-align: center;
+}
+
+div.tournament-pair > div.totals > div {
+    width: 2em;
+    font-weight: bold;
+}
+
+div.tournament-pair > div > div.black {
+    color: white;
+    background-color: black;
+}
+
 /* Misc. */
 
 span.game-winner {

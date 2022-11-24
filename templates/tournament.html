@@ -1,0 +1,41 @@
+<h1>Turniej - {{ tournament.date }} - {{ tournament.location }}
+
+<h2>Ranking</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Gracz</th>
+            <th>Wynik</th>
+            <th>Elo</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for rank, player, initial_rating, scores in tournament.ranking %}
+        <tr>
+            <td>{{ rank }}</td>
+            <td>{{ player }} ({{initial_rating}})</td>
+            <td>{{ scores.actual }}/{{ scores.games_played }}</td>
+            <td>{{ scores.adjustment }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h2>Gry</h2>
+
+{% for pair in tournament.pairs %}
+<div class="tournament-pair">
+    <div class="names">
+        <div>{{ pair.player_a }}</div>
+        <div>{{ pair.player_b }}</div>
+    </div>{% for game in pair.games %}<div class="scores">
+        <div class="{{ game.color_a }}">{{ game.score_a }}</div>
+        <div class="{{ game.color_b }}">{{ game.score_b }}</div>
+    </div>{% endfor %}<div class="totals">
+        <div>{{ pair.total_a }}</div>
+        <div>{{ pair.total_b }}</div>
+    </div>
+</div>
+{% endfor %}
