@@ -381,4 +381,54 @@ Kc2 52. Re1 Rd1 53. Ke2 Rxe1+ 54. Kxe1 Kb2 55. Kd1 c2+ 56. Kd2 c1=Q+ 57. Ke2 b6
             ),
         ],
     ),
+    TournamentData(
+        date=date(2023, 1, 8),
+        location='Rezydencja J. Szachego',
+        games=[
+            GameData(
+                gid=25,
+                white='Jerzy Szachy',
+                black='Fryderyk Szopen',
+                pgn='''1. d4 e6 2. Bf4 Bd6 3. Bxd6 cxd6 4. Nf3 Qa5+ 5. Nc3 e5 6. d5 e4 7. Ng5 Nf6 8.
+Qd2 h6 9. Ngxe4 Nxe4 10. Nxe4 Qa6 11. e3 f5 12. Bxa6 fxe4 13. Bc4 O-O 14. O-O g5
+15. f4 a6 16. fxg5 hxg5 17. Rxf8+ Kxf8 18. Rf1+ Ke8 19. Qf2 Kd8 20. g4 b5 21. h4
+bxc4 22. h5 Bb7 23. Rd1 a5 24. h6 Na6 25. h7 Kc7 26. Qf6 Nc5 27. h8=Q Rxh8 28.
+Qxh8 Nd3 29. cxd3 cxd3 30. Rc1+ Kb6 31. Qd8+ Kb5 32. Qxd7+ Kb4 33. Qxb7+ Ka4 34.
+Rc4# 1-0''',
+                score=2,
+                termination=Termination.CHECKMATE,
+                chess_com_embed=9848491,
+            ),
+            GameData(
+                gid=26,
+                white='Husarski Generał',
+                black='Stoned Qń',
+                pgn='''1. Nc3 e5 2. a4 Nc6 3. e3 d6 4. Bb5 Nf6 5. h3 a6 6. Bxc6+ bxc6 7. f3 c5 8. d4
+cxd4 9. Ne4 Nd5 10. exd4 Ne3 11. Bxe3 d5 12. Nc5 Be7 13. Nb3 O-O 14. dxe5 Bb4+
+15. c3 Be7 16. Ne2 c6 17. Ned4 Rb8 18. f4 a5 19. Nxc6 Qc7 20. Nxb8 Qxb8 21. Nxa5
+Bh4+ 22. Ke2 Ba6+ 23. Kd2 Qxb2+ 24. Qc2 Qb7 25. Nxb7 Bxb7 26. Rab1 Bc8 27. Rb8
+1-0''',
+                score=2,
+                termination=Termination.RESIGNATION,
+                chess_com_embed=9848791,
+            ),
+            GameData(
+                gid=27,
+                white='Stoned Qń',
+                black='Husarski Generał',
+                pgn='''1. e4 Nf6 2. d3 e5 3. Nf3 d6 4. Bg5 Bg4 5. Bxf6 gxf6 6. h3 Bh5 7. g4 Bg6 8. Nc3
+c6 9. h4 d5 10. h5 dxe4 11. dxe4 Qxd1+ 12. Kxd1 Bb4 13. Na4 b5 14. Nc3 Na6 15.
+hxg6 Bxc3 16. bxc3 fxg6 17. c4 Nc5 18. cxb5 Nxe4 19. Rh2 Rd8+ 20. Ke1 g5 21.
+bxc6 a5 22. Bb5 Ke7 23. Rh6 Rb8 24. c4 Kf7 25. c7 Rbc8 26. Rc1 Rxc7 27. a3 Kg7
+28. Ke2 Kxh6 29. Rh1+ Kg6 30. Ke3 Nc3 31. Ba6 Ra8 32. Rc1 Na2 33. Rc2 Rxa6 34.
+Rxa2 Rxc4 35. Nd2 Rxg4 36. Rc2 f5 37. Rc8 f4+ 38. Ke2 Rg2 39. Rg8+ Kh6 40. Nf3
+g4 41. Nxe5 f3+ 42. Ke3 Re6 43. Ke4 Rxf2 44. Rxg4 Kh5 45. Rf4 Re2+ 46. Kf5
+R6xe5+ 47. Kf6 f2 48. a4 R5e4 49. Rf5+ Kg4 50. Rxa5 f1=Q+ 51. Kg7 Re7+ 52. Kg8
+Qf7+ 0-1''',
+                score=0,
+                termination=Termination.RESIGNATION,
+                chess_com_embed=9848979,
+            ),
+        ],
+    ),
 ]
