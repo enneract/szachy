@@ -400,6 +400,15 @@ Rc4# 1-0''',
                 chess_com_embed=9848491,
             ),
             GameData(
+                gid=28,
+                white='Pion Forward',
+                black='Stoned Qń',
+                pgn='???',
+                score=0,
+                termination=Termination.CHECKMATE,
+                chess_com_embed=0,
+            ),
+            GameData(
                 gid=26,
                 white='Husarski Generał',
                 black='Stoned Qń',
@@ -428,6 +437,58 @@ Qf7+ 0-1''',
                 score=0,
                 termination=Termination.RESIGNATION,
                 chess_com_embed=9848979,
+            ),
+        ],
+    ),
+    TournamentData(
+        date=date(2023, 1, 13),
+        location='Rezydencja J. Szachego',
+        games=[
+            GameData(
+                gid=29,
+                white='Magnus Carlsen',
+                black='Pion Forward',
+                pgn='''1. Nf3 d5 2. e3 f6 3. Nc3 c6 4. Nd4 Qd7 5. Be2 c5 6. Nb3 Nc6 7. O-O g6 8. f4 e5
+9. Nxc5 Qd6 10. Nd3 e4 11. b4 exd3 12. cxd3 Qxb4 13. a4 d4 14. exd4 Nxd4 15. Na2
+Qd6 16. Rb1 Qe6 17. Rb4 Nxe2+ 18. Qxe2 Qxe2 19. Re4+ Qxe4 20. dxe4 Be6 21. Nc3
+Bc4 22. d3 Bc5+ 23. Kh1 Bxd3 24. Rf3 Rd8 25. Ba3 Bxa3 0-1''',
+                score=0,
+                termination=Termination.RESIGNATION,
+                chess_com_embed=9872765,
+            ),
+            GameData(
+                gid=30,
+                white='Pion Forward',
+                black='Magnus Carlsen',
+                pgn='''1. e4 Nf6 2. f3 Nc6 3. c3 e5 4. g4 g5 5. Bc4 d5 6. exd5 Bd7 7. dxc6 Bxc6 8. Qb3
+Nd7 9. Bxf7+ Ke7 10. Qe6# 1-0''',
+                score=2,
+                termination=Termination.CHECKMATE,
+                chess_com_embed=9872771,
+            ),
+            GameData(
+                gid=31,
+                white='Stoned Qń',
+                black='Fryderyk Szopen',
+                pgn='''1. e4 Nf6 2. d3 e5 3. Nf3 d6 4. d4 exd4 5. Nxd4 Nxe4 6. Bb5+ Nd7 7. Qe2 d5 8. c4
+Bb4+ 9. Nc3 c6 10. Nxc6 bxc6 11. Ba4 O-O 12. Bxc6 Bxc3+ 13. bxc3 Ba6 14. Qe3 Re8
+15. cxd5 g5 16. f3 Nef6 17. h4 h6 18. hxg5 Rxe3+ 19. Bxe3 Nxd5 20. Bxd5 Rc8 21.
+gxh6 Rxc3 22. Bxa7 Qa5 23. h7+ Kg7 24. h8=Q+ Kg6 25. Be4+ f5 26. Rh5 Rc1+ 27.
+Kf2 Rc2+ 28. Bxc2 1-0''',
+                score=2,
+                termination=Termination.RESIGNATION,
+                chess_com_embed=9872777,
+            ),
+            GameData(
+                gid=32,
+                white='Fryderyk Szopen',
+                black='Stoned Qń',
+                pgn='''1. e4 e5 2. Nc3 d6 3. Bb5+ c6 4. Ba4 b5 5. Bb3 a6 6. Nf3 Nf6 7. d3 Bg4 8. a4 a5
+9. h3 Bh5 10. Ng5 Bxd1 11. Nxf7 Qe7 12. Nxh8 Bh5 13. axb5 cxb5 14. Nxb5 a4 15.
+Rxa4 Qb7 16. Na7 Rxa7 17. Rxa7 Qxa7 18. Be3 Qa1+ 19. Kd2 Qxh1 20. Ba4+ Nbd7 0-1''',
+                score=0,
+                termination=Termination.RESIGNATION,
+                chess_com_embed=9872783,
             ),
         ],
     ),
