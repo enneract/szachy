@@ -492,4 +492,86 @@ Rxa4 Qb7 16. Na7 Rxa7 17. Rxa7 Qxa7 18. Be3 Qa1+ 19. Kd2 Qxh1 20. Ba4+ Nbd7 0-1'
             ),
         ],
     ),
+    TournamentData(
+        date=date(2023, 1, 15),
+        location='Rezydencja J. Szachego',
+        games=[
+            GameData(
+                gid=33,
+                white='Hikaru Hetman',
+                black='Pion Forward',
+                pgn='''1. d4 d5 2. Nf3 f6 $2 3. Nc3 c6 $6 4. e4 Bg4 5. h3 Bxf3 $6 6. Qxf3 e5 7. exd5 cxd5 $2
+8. Nxd5 Qa5+ 9. Bd2 exd4 10. Bxa5 Kd7 $2 11. Nc7 $2 Nc6 $2 12. Qd5+ Bd6 13. Nxa8 $2 Nxa5
+14. Qxa5 Ne7 15. Bb5+ Ke6 16. Nc7+ Kf7 17. Bc4+ Kg6 18. Bd3+ Kh6 19. Ne6 Nc6 $2
+20. Qd2+ g5 21. h4 Re8 $6 22. hxg5# 1-0''',
+                score=2,
+                termination=Termination.CHECKMATE,
+                chess_com_embed=9883815,
+            ),
+            GameData(
+                gid=34,
+                white='Pion Forward',
+                black='Hikaru Hetman',
+                pgn='''1. e4 e5 2. Nc3 d6 3. Nf3 Nc6 4. Bc4 Nd4 5. Nd5 c6 6. c3 Nxf3+ 7. gxf3 cxd5 8.
+Qa4+ Bd7 9. Bb5 Nf6 10. d4 a6 11. Bxd7+ Nxd7 12. dxe5 dxe5 13. exd5 b5 14. Qc2
+Bc5 15. b4 Bd6 16. a4 bxa4 17. Qxa4 O-O 18. Qc6 Nb6 19. Be3 Rb8 20. Rxa6 Re8 21.
+Bxb6 Rxb6 22. Rxb6 h6 23. Qxd6 Qxd6 24. Rxd6 e4 25. fxe4 Rxe4+ 26. Kf1 Re8 27.
+f4 Rc8 28. Rg1 Rxc3 29. Rg3 Rc1+ 30. Kf2 Rc2+ 31. Kf3 Rxh2 32. Rd8+ Kh7 33. Rf8
+Rd2 34. Rxf7 Rd3+ 35. Kg4 Rxg3+ 36. Kxg3 Kg6 37. Ra7 1-0''',
+                score=2,
+                termination=Termination.RESIGNATION,
+                chess_com_embed=9883823,
+            ),
+            GameData(
+                gid=35,
+                white='Fryderyk Szopen',
+                black='Jerzy Szachy',
+                pgn='''1. Nf3 d6 2. e4 e5 3. Bb5+ Bd7 4. Bd3 Nf6 5. Bc4 Bc6 6. Ng5 d5 7. Bd3 Nxe4 8.
+Nxe4 dxe4 9. Bxe4 Bxe4 10. f3 Bd5 11. Nc3 Bc5 12. Qe2 Nc6 13. Qb5 Qe7 14. Nxd5
+Qd6 15. Qxb7 Kd7 16. Nc3 Na5 17. Qd5 Bb4 18. a3 Bxc3 19. Qxd6+ cxd6 20. dxc3 Nc4
+21. b3 Rhc8 22. f4 e4 23. bxc4 Rxc4 24. Bd2 Re8 25. O-O-O e3 26. Rhe1 exd2+ 27.
+Kxd2 Rxf4 28. g3 Rf2+ 29. Kd3 Rxh2 30. Rb1 Rxe1 31. Rxe1 f5 32. c4 g5 33. Kd4 f4
+34. gxf4 gxf4 35. c5 f3 36. Kd5 dxc5 37. Kxc5 f2 38. Rf1 h5 39. a4 h4 40. a5 h3
+41. Kb5 Kc7 42. a6 Rg2 43. Rh1 h2 44. c3 Rg1 45. Rxh2 f1=Q+ 46. c4 Rg5+ 47. Kb4
+Qe1+ 48. Kb3 Qg3+''',
+                score=0,
+                termination=Termination.RESIGNATION,
+                chess_com_embed=9883833,
+            ),
+            GameData(
+                gid=36,
+                white='Stoned Qń',
+                black='Jerzy Szachy',
+                pgn='''1. e4 e5 2. Nf3 Bd6 $2 3. c3 b5 $4 4. d4 $1 exd4 5. Nxd4 $2 Ba6 $2 6. Bxb5 c6 $2 7. Bc4 $4
+Bxc4 8. b3 $2 Be6 $6 9. O-O Nf6 10. Re1 $6 O-O $4 11. e5 $1 Bg4 $2 12. f3 $1 Qb6 $4 13. fxg4
+Bxe5 14. Rxe5 d6 15. Rf5 Nbd7 16. Na3 $6 c5 $6 17. Nc4 Qc7 18. Nb5 Qc6 19. a4 Rfe8
+20. g5 Qe4 21. gxf6 Qxf5 22. Ncxd6 Qxf6 23. Nxe8 Rxe8 24. Qxd7 $4 Qxc3 25. Qxe8#
+1-0''',
+                score=2,
+                termination=Termination.CHECKMATE,
+                chess_com_embed=9883841,
+            ),
+            GameData(
+                gid=37,
+                white='Stoned Qń',
+                black='Fryderyk Szopen',
+                pgn='''1. e4 e5 2. Nf3 Qe7 3. Nc3 d5 4. Bb5+ c6 5. Nxd5 Qc7 6. Nxc7+ 1-0''',
+                score=2,
+                termination=Termination.RESIGNATION,
+                chess_com_embed=9883845,
+            ),
+            GameData(
+                gid=38,
+                white='Jerzy Szachy',
+                black='Stoned Qń',
+                pgn='''1. d4 d5 2. Bf4 f6 3. Nf3 e5 4. dxe5 fxe5 5. Bxe5 Bb4+ 6. Nbd2 Nc6 7. Bxg7 Nge7
+8. Bxh8 Qd7 9. c3 Ba5 10. Qc2 Qe6 11. Ng5 Qf6 12. Bxf6 h6 13. Bxe7 Kxe7 14. Qh7+
+Kd6 15. Qxh6+ Kc5 16. b4+ Bxb4 17. cxb4+ Nxb4 18. Rc1+ Kb5 19. e4+ Ka4 20. exd5
+Nxa2 21. Rc4+ Kb5 22. Rc2+''',
+                score=2,
+                termination=Termination.RESIGNATION,
+                chess_com_embed=9883851,
+            ),
+        ],
+    ),
 ]
