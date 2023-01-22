@@ -403,10 +403,14 @@ Rc4# 1-0''',
                 gid=28,
                 white='Pion Forward',
                 black='Stoned Qń',
-                pgn='???',
+                pgn='''1. e4 e5 2. Nf3 Nc6 3. d4 Nxd4 4. Nxd4 exd4 5. Qxd4 d6 6. Qa4+ Bd7 7. Bb5 c6 8.
+Bc4 b5 9. Bxf7+ Kxf7 10. Qb3+ Ke8 11. g3 Nf6 12. f3 Qa5+ 13. Bd2 Qb6 14. Nc3 Qb7
+15. a4 d5 16. axb5 cxb5 17. Nxd5 Rb8 18. Bf4 Rc8 19. O-O Bc6 20. Qd3 Bc5+ 21.
+Kg2 a5 22. Rxa5 Bb4 23. Nxb4 Nxe4 24. Re1 Rd8 25. Bd6 Rxd6 26. Qb3 Rd2+ 27. Kh3
+Bd7+ 28. Kh4 Rxh2# 0-1''',
                 score=0,
                 termination=Termination.CHECKMATE,
-                chess_com_embed=0,
+                chess_com_embed=9920929,
             ),
             GameData(
                 gid=26,
@@ -571,6 +575,74 @@ Nxa2 21. Rc4+ Kb5 22. Rc2+''',
                 score=2,
                 termination=Termination.RESIGNATION,
                 chess_com_embed=9883851,
+            ),
+        ],
+    ),
+    TournamentData(
+        date=date(2023, 1, 22),
+        location='Rezydencja J. Szachego',
+        games=[
+            GameData(
+                gid=39,
+                white='Hikaru Hetman',
+                black='Magnus Carlsen',
+                pgn='''1. e4 e5 2. Qh5 Nf6 3. Qxe5+ Be7 4. Nf3 d6 5. Qg3 Nxe4 6. Qf4 Nf6 7. Bc4 O-O 8.
+Ng5 h6 9. Bxf7+ Kh8 10. h4 hxg5 11. hxg5+ Nh7 12. g6 Rxf7 13. gxf7 Qf8 14. b4
+Nc6 15. Ba3 b5 16. Bb2 d5 17. Qh6 Qxf7 18. Qxh7# 1-0''',
+                score=2,
+                termination=Termination.CHECKMATE,
+                chess_com_embed=9920935,
+            ),
+            GameData(
+                gid=40,
+                white='Magnus Carlsen',
+                black='Hikaru Hetman',
+                pgn='''1. e4 e5 2. d3 Nc6 3. Nf3 Qe7 4. Nc3 b5 5. Bg5 f6 6. Nd5 Qc5 7. Nxc7+ Kd8 8.
+Nxa8 Qb4+ 9. Ke2 Nd4+ 10. Nxd4 exd4 11. f4 fxg5 12. fxg5 Bb7 13. c3 Qxb2+ 14.
+Ke1 dxc3 15. Rb1 Qxa2 16. Ra1 Qb2 17. Rb1 Bb4 18. Rxb2 cxb2+ 19. Kf2 Bxa8 20.
+Be2 Ne7 21. Qb1 Ba3 22. Rd1 Rf8+ 23. Ke1 Nc6 24. Qa2 Bb4+ 25. Rd2 Bxd2+ 26. Kd1''',
+                score=0,
+                termination=Termination.RESIGNATION,
+                chess_com_embed=9920939,
+            ),
+            GameData(
+                gid=41,
+                white='Fryderyk Szopen',
+                black='Stoned Qń',
+                pgn='''1. Nc3 c6 2. Nf3 d5 3. e4 Qa5 4. exd5 cxd5 5. Bb5+ Nc6 6. a3 a6 7. b4 Qb6 8. Rb1
+axb5 9. Nxd5 Qa6 10. Nc7+ Kd7 11. Nxa6 Rxa6 12. d4 Nf6 13. Rb3 Ke8 14. d5 Nd8
+15. Rd3 Bf5 16. Rd2 Rxa3 17. Bxa3 e6 18. dxe6 Be7 19. exf7+ Kf8 20. Ne5 Bg4 21.
+Rxd8+ Bxd8 22. Qxd8+ Ne8 23. Qxe8# 1-0''',
+                score=2,
+                termination=Termination.CHECKMATE,
+                chess_com_embed=9921031,
+            ),
+            GameData(
+                gid=42,
+                white='Jerzy Szachy',
+                black='Fryderyk Szopen',
+                pgn='''1. d4 Nf6 2. Bf4 d5 3. Nf3 Bg4 4. e3 Bxf3 5. Qxf3 e6 6. Nd2 Bb4 7. c3 Bd6 8. Bd3
+h5 9. Bg5 Be7 10. O-O Nc6 11. e4 h4 12. exd5 Nxd5 13. Rae1 Bxg5 14. Ne4 Ne5 15.
+dxe5 b5 16. Nxg5 Qxg5 17. Bxb5+ Ke7 18. Bc6 Rab8 19. Bxd5 Rxb2 20. h3 exd5 21.
+Qxd5 Rd8 22. Qc5+ Kd7 23. Rd1+ Rd2 24. e6+ Kxe6 25. Qxg5 Rxd1 26. Rxd1 Rxd1+ 27.
+Kh2 f6 28. Qg4+ f5 29. Qxd1''',
+                score=2,
+                termination=Termination.RESIGNATION,
+                chess_com_embed=9921159,
+            ),
+            GameData(
+                gid=43,
+                white='Hikaru Hetman',
+                black='Pion Forward',
+                pgn='''1. e4 Nf6 2. Nc3 c6 3. Qe2 d5 4. e5 Bg4 5. f3 Bf5 6. exf6 gxf6 7. g4 Bxc2 8. b4
+Qd7 9. b5 a6 10. a4 axb5 11. a5 e5 12. Bb2 Bc5 13. Nh3 d4 14. Ne4 Ke7 15. Nxc5
+Qc7 16. g5 fxg5 17. Nxg5 b6 18. axb6 Rxa1+ 19. Bxa1 Qd6 20. Nge4 Qg6 21. Bh3 f5
+22. Nf2 Nd7 23. Nxd7 Kxd7 24. Qxe5 Re8 25. Bxf5+ Qe6 26. Bxe6+ Rxe6 27. Qxe6+
+Kxe6 28. b7 b4 29. b8=Q b3 30. Qe8+ Kd5 31. Qh5+ Kc4 32. Ne4 Kd3 33. Qxh7 Bb1
+34. Bxd4 Kxd4 35. Qd7+ Ke5 36. Qd6+ Kf5 37. Qf6# 1-0''',
+                score=2,
+                termination=Termination.CHECKMATE,
+                chess_com_embed=9921383,
             ),
         ],
     ),
