@@ -646,4 +646,61 @@ Kxe6 28. b7 b4 29. b8=Q b3 30. Qe8+ Kd5 31. Qh5+ Kc4 32. Ne4 Kd3 33. Qxh7 Bb1
             ),
         ],
     ),
+    TournamentData(
+        date=date(2023, 2, 3),
+        location='Rezydentcja J. Szachego',
+        games=[
+            GameData(
+                gid=44,
+                white='Jerzy Szachy',
+                black='Magnus Carlsen',
+                pgn='''1. d4 Nf6 2. Bf4 d5 3. Nf3 Nc6 4. e3 h5 5. Bd3 Bf5 6. Bxf5 Rh7 7. Bxh7 Nxh7 8.
+O-O Qd7 9. Nbd2 O-O-O 10. Ne5 Qd6 11. Nxf7 Rd7 12. Nxd6+ exd6 13. Qxh5 Re7 14.
+Qxh7 1-0''',
+                score=2,
+                termination=Termination.RESIGNATION,
+                chess_com_embed=9990183,
+            ),
+            GameData(
+                gid=45,
+                white='Magnus Carlsen',
+                black='Jerzy Szachy',
+                pgn='''1. e4 c5 2. Bd3 d6 3. f4 e5 4. c4 exf4 5. Qg4 Bxg4 6. Kf1 Qh4 7. h3 h5 8. a4 g6
+9. b3 Bg7 10. Ra2 Bd4 11. Ne2 Qf2# 0-1''',
+                score=0,
+                termination=Termination.CHECKMATE,
+                chess_com_embed=9990189,
+            ),
+            GameData(
+                gid=46,
+                white='Fryderyk Szopen',
+                black='Stoned Qń',
+                pgn='''1. e4 e5 2. Nf3 d6 3. d4 Bg4 4. dxe5 Bxf3 5. gxf3 Nc6 6. exd6 cxd6 7. Bb5 Qa5+
+8. Nc3 Rc8 9. f4 a6 10. Bxc6+ Rxc6 11. Bd2 Nf6 12. Qe2 Qh5 13. e5 dxe5 14. fxe5
+Ng4 15. e6 fxe6 16. h3 Nf6 17. f3 e5 18. f4 g5 19. fxe5 Qh6 20. exf6+ Kf7 21.
+Rf1 Qxh3 22. Bxg5 Rc5 23. Rg1 a5 24. Be3 b6 25. Bxc5 bxc5 26. Ne4 h5 27. Rd1 Rh6
+28. Nd6+ Bxd6 29. Rxd6 Qh4+ 30. Kd1 c4 31. Rg7+ Kf8 32. Rd8# 1-0''',
+                score=2,
+                termination=Termination.CHECKMATE,
+                chess_com_embed=9991037,
+            ),
+            GameData(
+                gid=47,
+                white='Stoned Qń',
+                black='Fryderyk Szopen',
+                pgn='''1. e4 e5 2. Qh5 Qe7 3. Nf3 Nf6 4. Qf5 g6 5. Qh3 d6 6. b3 Bxh3 7. gxh3 Nxe4 8.
+Ba3 g5 9. d3 Nc5 10. h4 g4 11. Nfd2 Bg7 12. Nc3 e4 13. Nd5 Qe5 14. Rb1 exd3+ 15.
+Kd1 dxc2+ 16. Kxc2 Qxd5 17. Bb5+ c6 18. Rhe1+ Be5 19. Ba4 Nd3 20. Re3 Nc5 21.
+Rg1 f5 22. f3 Nxa4 23. bxa4 Qxa2+ 24. Kd1 gxf3 25. Nxf3 f4 26. Ree1 Qxa3 27.
+Nxe5 dxe5 28. Rxe5+ Qe7 29. Rxe7+ Kxe7 30. Re1+ Kf7 31. Kd2 Rd8+ 32. Ke2 b5 33.
+Rf1 bxa4 34. Rxf4+ Ke7 35. h5 a3 36. Ra4 Nd7 37. Rxa3 Ne5 38. Re3 Rd5 39. Rg3
+Rb8 40. Rg7+ Kf6 41. Rxh7 Rb2+ 42. Ke3 Ng4+ 43. Kf3 Nxh2+ 44. Kg3 Nf1+ 45. Kg4
+Rd4+ 46. Kf3 Rb3+ 47. Ke2 Ng3+ 48. Kf2 Rd2+ 49. Ke1 Ne4 50. Rh6+ Kg5 51. Rh7
+Rb1# 0-1''',
+                score=0,
+                termination=Termination.CHECKMATE,
+                chess_com_embed=9991045,
+            ),
+        ],
+    ),
 ]
