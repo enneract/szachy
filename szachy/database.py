@@ -648,7 +648,7 @@ Kxe6 28. b7 b4 29. b8=Q b3 30. Qe8+ Kd5 31. Qh5+ Kc4 32. Ne4 Kd3 33. Qxh7 Bb1
     ),
     TournamentData(
         date=date(2023, 2, 3),
-        location='Rezydentcja J. Szachego',
+        location='Rezydencja J. Szachego',
         games=[
             GameData(
                 gid=44,
