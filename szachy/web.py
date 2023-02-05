@@ -13,7 +13,7 @@ def _abbreviate_name(name: str) -> str:
 
 
 def _format_score(score: int) -> str:
-    return str(score // 2) + ('.5' if score % 2 == 1 else '')
+    return (str(score // 2) if score != 1 else '') + ('½' if score % 2 == 1 else '')
 
 
 class GameView:
