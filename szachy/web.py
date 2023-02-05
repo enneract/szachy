@@ -149,7 +149,26 @@ def main() -> None:
     tpl_planner = environment.get_template('planner.html')
 
     ratings, tournaments, total_scores = compute_ratings()
-    elo_ranking = [*compute_ranking(ratings, lambda rating: rating)]
+
+    ranked_ratings = {
+        player: rating
+        for player, rating in ratings.items()
+        if total_scores[player].games_played >= 10
+    }
+
+    elo_ranking = [*compute_ranking(ranked_ratings, lambda rating: rating)]
+
+    unranked_ratings = {
+        player: rating
+        for player, rating in ratings.items()
+        if total_scores[player].games_played < 10
+    }
+
+    unranked_listing = [
+        (player, rating)
+        for rank, player, rating in
+        compute_ranking(unranked_ratings, lambda rating: rating)
+    ]
 
     games_by_gid = {
         game.gid: game
@@ -164,6 +183,7 @@ def main() -> None:
         content = tpl_index.render(
             webroot=webroot,
             elo_ranking=elo_ranking,
+            unranked_listing=unranked_listing,
             total_scores=total_scores,
             tournaments=tournament_summaries,
         )

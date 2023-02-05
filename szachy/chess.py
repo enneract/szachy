@@ -54,6 +54,10 @@ class TotalScore:
     draws: int = 0
     losses: int = 0
 
+    @property
+    def games_played(self) -> int:
+        return self.wins + self.draws + self.losses
+
 
 @dataclass(frozen=True)
 class Tournament:
