@@ -703,4 +703,63 @@ Rb1# 0-1''',
             ),
         ],
     ),
+    TournamentData(
+        date=date(2023, 2, 5),
+        location='Rezydencja J. Szachego',
+        games=[
+            GameData(
+                gid=48,
+                white='Jerzy Szachy',
+                black='Hikaru Hetman',
+                pgn='''1. d4 d5 2. Bf4 Nc6 3. Nf3 Bf5 4. e3 Nf6 5. Bd3 Ne4 6. Nbd2 e6 7. O-O g5 8. Nxg5
+Nxg5 9. Bxg5 Qxg5 10. f4 Qg4 11. Qxg4 Bxg4 12. e4 Nxd4 13. e5 Bc5 14. Kh1 O-O-O
+15. Rae1 Rdg8 16. c3 Nf5 17. b4 Be3 18. h3 Ng3+ 19. Kh2 Nxf1+ 20. Nxf1 Bxf4+ 21.
+g3 Bd2 22. Nxd2 Bf5 23. Bxf5 exf5 24. e6 fxe6 25. Rxe6 h5 26. Re5 h4 27. gxh4
+Rxh4 28. Rxf5 c6 29. Nf3 Rc4 30. a3 Rxc3 31. Ne5 Rc2+ 32. Kh1 Rc1+ 33. Kh2 d4
+34. h4 Rc2+ 35. Kh3 Ra2 36. h5 Rd8 37. Rf3 Re8 38. h6 Rxe5 39. Rf8+ Kc7 40. h7
+Rh5+ 41. Kg3 Rxh7 42. Kf3 Rxa3+ 43. Ke4 d3 0-1''',
+                score=0,
+                termination=Termination.RESIGNATION,
+                chess_com_embed=10001947,
+            ),
+            GameData(
+                gid=49,
+                white='Hikaru Hetman',
+                black='Jerzy Szachy',
+                pgn='''1. e4 c6 2. d4 d5 3. exd5 cxd5 4. Nc3 Nf6 5. Bg5 Nbd7 6. Bb5 a6 7. Bxd7+ Bxd7 8.
+Bxf6 exf6 9. Qe2+ Qe7 10. Nxd5 Qxe2+ 11. Nxe2 Rc8 12. O-O-O Bb5 13. Nb6 Bxe2 14.
+Rde1 Rd8 15. c3 Be7 16. Rxe2 O-O 17. Rxe7 Rd6 18. Rxb7 1-0''',
+                score=2,
+                termination=Termination.RESIGNATION,
+                chess_com_embed=10001955,
+            ),
+            GameData(
+                gid=50,
+                white='Jerzy Gram Białymi',
+                black='Magnus Carlsen',
+                pgn='''1. d4 Nc6 2. Bf4 Nxd4 3. Nc3 Nxc2+ 4. Qxc2 d5 5. Nf3 Nf6 6. a4 g6 7. e3 c6 8.
+    Ra3 Bg7 9. Bd3 O-O 10. b4 e6 11. O-O h6 12. Rb3 h5 13. Nh4 Ng4 14. Rbb1 f6 15.
+    Be2 g5 16. Ng6 gxf4 17. exf4 e5 18. Nxd5 Qxd5 19. fxe5 Re8 20. Rbd1 Qf7 21. Bc4
+    Re6 22. Rde1 Qxg6 23. Qxg6 Nxe5 24. Qxh5 Nxc4 25. Rxe6 Bxe6 26. Re1 Bf7 27. Re7
+    Kf8 28. Rxf7+ Kg8 29. Rxg7+ Kxg7 30. Qh4 f5 31. Qxc4 Rd8 32. a5 b5 33. Qc3+ Kg6
+    34. Qg3+ Kf6 35. h4 Rd4 36. h5 Rxb4 37. Qc3+ Rd4 38. Qxd4+ Kg5 39. Qd8+ Kxh5 40.
+    g3 Kg4 41. Qg8+ Kf3 42. Kf1 Ke4 43. Qa8 f4 44. Qxa7 b4 45. Qb7 b3 46. Qxb3 1-0''',
+                score=2,
+                termination=Termination.RESIGNATION,
+                chess_com_embed=10002413,
+            ),
+            GameData(
+                gid=51,
+                white='Magnus Carlsen',
+                black='Jerzy Gram Białymi',
+                pgn='''1. e4 e5 2. d3 Bb4+ 3. Bd2 Bc5 4. Be3 Bb4+ 5. c3 Ba5 6. Nf3 f6 7. Nbd2 Nc6 8.
+Qa4 d6 9. Nc4 Bg4 10. Nxa5 Qd7 11. Nd2 h6 12. f3 Bh5 13. f4 Nge7 14. f5 g5 15.
+Be2 a6 16. Ndc4 g4 17. h3 Rg8 18. hxg4 Bxg4 19. Bxh6 Bxf5 20. exf5 Nxf5 21. Rf1
+Qe6 22. Bg4 Rxg4 23. Ne3 Rxa4 24. Rxf5 Rxa5 0-1''',
+                score=0,
+                termination=Termination.RESIGNATION,
+                chess_com_embed=10002695,
+            ),
+        ],
+    ),
 ]
