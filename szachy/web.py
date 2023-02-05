@@ -1,15 +1,22 @@
 import argparse
+from collections import defaultdict
+from typing import Dict, List, Tuple
 
 from aiohttp import web
 from jinja2 import Environment, FileSystemLoader
 
-from szachy.chess import Game, Score, Tournament, compute_ratings, compute_ranking
+from szachy.chess import Game, Score, Tournament, compute_ratings, compute_ranking, elo_expected_score
 from szachy.database import Termination
 
 
 def _abbreviate_name(name: str) -> str:
     parts = name.split(' ')
     return ''.join(f'{part[0]}. ' for part in parts[:-1]) + parts[-1]
+
+
+def _make_initials(name: str) -> str:
+    parts = name.split(' ')
+    return ''.join(f'{part[0]}. ' for part in parts)
 
 
 def _format_score(score: int) -> str:
@@ -46,13 +53,12 @@ class TournamentView:
 
         self.ranking = [
             (
-                rank,
                 _abbreviate_name(name),
                 tournament.initial_ratings[name],
                 ScoreView(score, tournament.ranked)
             )
             for rank, name, score
-            in compute_ranking(tournament.scores, lambda scores: float(scores))
+            in compute_ranking(tournament.scores, lambda scores: scores.adjustment)
         ]
 
 
@@ -68,6 +74,59 @@ class GameDetailedView(GameView):
 
         self.chess_com_embed = game.chess_com_embed
         self.pgn = game.pgn
+
+
+class PlannerView:
+    def __init__(self, ratings: Dict[str, int], tournaments: List[Tournament]) -> None:
+        players = [*ratings.keys()]
+        names = [*map(_abbreviate_name, players)]
+        self.initials = [*map(_make_initials, players)]
+
+        game_counts: Dict[str, int] = defaultdict(int)
+        for tournament in tournaments:
+            for game in tournament.games:
+                game_counts[game.white] += 1
+                game_counts[game.black] += 1
+
+        self.least_played = [
+            (player, count)
+            for rank, player, count in compute_ranking(game_counts, lambda x: -x)
+        ]
+
+        def probability(a: str, a_rating: int, b: str, b_rating: int) -> str:
+            if a == b:
+                return ''
+
+            score = elo_expected_score(a_rating, b_rating)
+            return f'{50 * score:.0f}'
+
+        probability_matrix = [
+            [
+                probability(a, a_rating, b, b_rating)
+                for b, b_rating in ratings.items()
+            ]
+            for a, a_rating in ratings.items()
+        ]
+        self.names_and_probabilities = zip(names, probability_matrix)
+
+        color_counts = [[0 for b in ratings] for a in ratings]
+        for tournament in tournaments:
+            for game in tournament.games:
+                i = players.index(game.white)
+                j = players.index(game.black)
+                color_counts[i][j] += 1
+                color_counts[j][i] -= 1
+
+        self.unpaired_games: List[Tuple[str, str, int]] = []
+        for i, row in enumerate(color_counts):
+            for j, count in enumerate(row):
+                if count <= 0:
+                    continue
+                self.unpaired_games.append((
+                    names[i],
+                    names[j],
+                    count,
+                ))
 
 
 def main() -> None:
@@ -87,6 +146,7 @@ def main() -> None:
     tpl_index = environment.get_template('index.html')
     tpl_game = environment.get_template('game.html')
     tpl_style = environment.get_template('style.css')
+    tpl_planner = environment.get_template('planner.html')
 
     ratings, tournaments, total_scores = compute_ratings()
     elo_ranking = [*compute_ranking(ratings, lambda rating: rating)]
@@ -120,6 +180,12 @@ def main() -> None:
             raise web.HTTPNotFound
 
         content = tpl_game.render(webroot=webroot, game=GameDetailedView(game))
+        text = tpl_header_footer.render(webroot=webroot, content=content)
+        return web.Response(text=text, content_type='text/html')
+
+    @routes.get(f'{webroot}/planer')
+    async def planner(request: web.Request) -> web.Response:
+        content = tpl_planner.render(webroot=webroot, planner=PlannerView(ratings, tournaments))
         text = tpl_header_footer.render(webroot=webroot, content=content)
         return web.Response(text=text, content_type='text/html')
 

@@ -30,12 +30,13 @@
 
 <h2>Turnieje</h2>
 
+<a href="/planer">Planer</a>
+
 <table id="tournaments">
     <thead>
         <tr>
             <th>Data i miejsce</th>
             <th>Gry</th>
-            <th></th>
             <th>Gracz</th>
             <th>Wynik</th>
             <th>Elo</th>
@@ -43,7 +44,7 @@
     </thead>
     <tbody>
         {% for tournament in tournaments %}
-        {% for rank, player, initial_rating, scores in tournament.ranking %}
+        {% for player, initial_rating, scores in tournament.ranking %}
         <tr>
             {% if loop.index == 1 %}
             <td rowspan="{{ tournament.ranking|length }}">
@@ -68,7 +69,6 @@
                 </ol>
             </td>
             {% endif %}
-            <td>{{ rank }}</td>
             <td>{{ player }} ({{initial_rating}})</td>
             <td>{{ scores.actual }}/{{ scores.games_played }}</td>
             <td>{{ scores.adjustment }}</td>

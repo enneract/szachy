@@ -1,0 +1,63 @@
+<h2>Niesparowane gry</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Gracz A</th>
+            <th>Gracz B</th>
+            <th>Przewaga A</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for player_a, player_b, advantage in planner.unpaired_games %}
+        <tr>
+            <td>{{ player_a }}</td>
+            <td>{{ player_b }}</td>
+            <td>{{ advantage }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+<h2>Gracze z najmniejszą liczbą gier</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Gracz</th>
+            <th>Liczba gier</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for player, count in planner.least_played %}
+        <tr>
+            <td>{{ player }}</td>
+            <td>{{ count }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h2>Prawdopodobieństwa wygranych</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            {% for initials in planner.initials %}
+            <th>{{ initials }}</th>
+            {% endfor %}
+        </tr>
+    <tbody>
+        {% for name, probabilities in planner.names_and_probabilities %}
+        <tr>
+            <td>{{ name }}</td>
+            {% for probability in probabilities %}
+            <td>{{ probability }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
